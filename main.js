@@ -1,4 +1,4 @@
-/* ElSEOLatino — Main JavaScript v2.0 */
+/* ElSEOLatino — Main JavaScript v2.1 */
 (function() {
   'use strict';
 
@@ -29,17 +29,20 @@
     });
   }
 
-  // Language toggle
+  // Language toggle — flag only, no text label
   var langToggle = document.querySelector('.lang-toggle');
   if (langToggle) {
     var currentLang = document.documentElement.lang || 'es';
+    // Flag shows the LANGUAGE YOU CAN SWITCH TO
+    // When page is Spanish, show US flag (click to switch to English)
+    // When page is English, show MX flag (click to switch to Spanish)
     langToggle.addEventListener('click', function() {
       currentLang = currentLang === 'es' ? 'en' : 'es';
       document.documentElement.lang = currentLang;
-      var label = langToggle.querySelector('.lang-label');
       var flag = langToggle.querySelector('.lang-flag');
-      if (label) label.textContent = currentLang === 'es' ? 'ES' : 'EN';
-      if (flag) flag.textContent = currentLang === 'es' ? '\uD83C\uDDF2\uD83C\uDDFD' : '\uD83C\uDDFA\uD83C\uDDF8';
+      // Show the flag of the OTHER language (the one you'd switch to next)
+      if (flag) flag.textContent = currentLang === 'es' ? '\uD83C\uDDFA\uD83C\uDDF8' : '\uD83C\uDDF2\uD83C\uDDFD';
+      // Switch all bilingual text
       document.querySelectorAll('[data-es]').forEach(function(el) {
         el.textContent = currentLang === 'es' ? el.dataset.es : el.dataset.en;
       });

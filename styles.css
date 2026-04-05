@@ -90,15 +90,13 @@ a { color: inherit; }
 .nav-cta::after { display: none !important; }
 .nav-cta:hover { transform: translateY(-2px); box-shadow: var(--shadow-gold); }
 .lang-toggle {
-  display: flex; align-items: center; gap: 6px;
+  display: flex; align-items: center; justify-content: center;
   background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 20px; padding: 6px 14px; color: var(--white); cursor: pointer;
-  font-family: 'Space Mono', monospace; font-size: 0.75rem;
-  letter-spacing: 0.05em; transition: all 0.3s ease; margin-left: 10px;
+  border-radius: 50%; width: 40px; height: 40px; color: var(--white); cursor: pointer;
+  transition: all 0.3s ease; margin-left: 10px; padding: 0;
 }
-.lang-toggle:hover { background: rgba(212,168,67,0.15); border-color: var(--gold); }
-.lang-flag { font-size: 1rem; }
-.lang-label { font-weight: 700; }
+.lang-toggle:hover { background: rgba(212,168,67,0.15); border-color: var(--gold); transform: scale(1.1); }
+.lang-flag { font-size: 1.4rem; line-height: 1; }
 .menu-toggle {
   display: none; flex-direction: column; gap: 5px; cursor: pointer;
   z-index: 1001; background: none; border: none; padding: 8px;

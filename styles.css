@@ -312,6 +312,78 @@ section { position: relative; }
 .breadcrumbs a:hover { color: var(--gold); }
 .breadcrumbs .sep { opacity: 0.4; }
 
+/* ========== RESULTADOS / PROJECTS ========== */
+.resultados { padding: 120px 60px; background: radial-gradient(ellipse 50% 40% at 50% 20%, rgba(212,168,67,0.04) 0%, transparent 70%), linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%); }
+.resultados-header { text-align: center; margin-bottom: 70px; }
+.resultados-header .section-subtitle { margin: 0 auto; }
+
+.project-card {
+  max-width: 1100px; margin: 0 auto 48px;
+  background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 20px; overflow: hidden;
+  transition: all 0.4s ease;
+}
+.project-card:hover { border-color: rgba(212,168,67,0.15); }
+.project-card:last-child { margin-bottom: 0; }
+
+.project-images { padding: 24px 24px 0; }
+.project-before-after { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.project-single-img { max-width: 600px; }
+.project-img-wrap { position: relative; border-radius: 12px; overflow: hidden; }
+.project-img-wrap img { width: 100%; height: auto; display: block; border-radius: 12px; }
+.project-img-label {
+  position: absolute; top: 12px; left: 12px;
+  background: rgba(0,0,0,0.7); color: var(--white);
+  padding: 4px 12px; border-radius: 6px;
+  font-family: 'Space Mono', monospace; font-size: 0.65rem;
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+.project-img-label.after { background: rgba(212,168,67,0.85); color: var(--navy-deep); }
+
+.project-info { padding: 28px 32px 32px; }
+.project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.project-tag {
+  padding: 4px 12px; background: rgba(79,143,255,0.1);
+  border: 1px solid rgba(79,143,255,0.2); border-radius: 100px;
+  font-family: 'Space Mono', monospace; font-size: 0.62rem;
+  color: var(--electric); letter-spacing: 1px; text-transform: uppercase;
+}
+.project-info h3 {
+  font-family: 'Playfair Display', serif; font-size: 1.6rem;
+  font-weight: 900; margin-bottom: 4px;
+}
+.project-url { margin-bottom: 16px; }
+.project-url a {
+  color: var(--gold); text-decoration: none; font-size: 0.85rem;
+  font-weight: 500; transition: color 0.3s;
+}
+.project-url a:hover { color: var(--gold-bright); }
+.project-desc {
+  color: var(--text-light); font-size: 0.92rem;
+  line-height: 1.7; margin-bottom: 24px;
+}
+.project-metrics {
+  display: flex; flex-wrap: wrap; gap: 24px;
+  padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.06);
+}
+.project-metric { text-align: center; min-width: 100px; }
+.project-metric-value {
+  font-family: 'Playfair Display', serif; font-size: 1.4rem;
+  font-weight: 900; color: var(--gold); display: block; line-height: 1.2;
+}
+.project-metric-label {
+  font-size: 0.72rem; color: var(--text-lighter);
+  text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; display: block;
+}
+
+@media (max-width: 768px) {
+  .resultados { padding: 80px 24px; }
+  .project-before-after { grid-template-columns: 1fr; }
+  .project-info { padding: 20px 20px 24px; }
+  .project-info h3 { font-size: 1.3rem; }
+  .project-metrics { gap: 16px; }
+}
+
 /* ========== SOCIAL STRIP ========== */
 .social-strip {
   display: flex; justify-content: center; align-items: center; gap: 32px;

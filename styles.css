@@ -292,7 +292,9 @@ section { position: relative; }
 .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1100px; margin: 0 auto; }
 .blog-card { background: rgba(255,255,255,0.025); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; overflow: hidden; transition: all 0.4s ease; text-decoration: none; color: inherit; display: block; }
 .blog-card:hover { border-color: rgba(212,168,67,0.2); transform: translateY(-4px); }
-.blog-card-img { aspect-ratio: 16/9; background: linear-gradient(135deg, var(--navy-mid), var(--navy-light)); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
+.blog-card-img { aspect-ratio: 16/9; overflow: hidden; display: flex; align-items: center; justify-content: center; background: var(--navy-mid); }
+.blog-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.blog-card:hover .blog-card-img img { transform: scale(1.05); }
 .blog-card-body { padding: 24px; }
 .blog-card-tag { font-family: 'Space Mono', monospace; font-size: 0.62rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--electric); margin-bottom: 10px; }
 .blog-card-body h3, .blog-card-body h2 { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
@@ -309,6 +311,24 @@ section { position: relative; }
 .breadcrumbs a { color: var(--text-lighter); text-decoration: none; transition: color 0.3s; }
 .breadcrumbs a:hover { color: var(--gold); }
 .breadcrumbs .sep { opacity: 0.4; }
+
+/* ========== SOCIAL STRIP ========== */
+.social-strip {
+  display: flex; justify-content: center; align-items: center; gap: 32px;
+  padding: 16px 24px;
+  background: rgba(255,255,255,0.03);
+  border-top: 1px solid rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.social-strip-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--text-lighter); text-decoration: none;
+  font-size: 0.82rem; font-weight: 500; letter-spacing: 0.3px;
+  transition: color 0.3s ease;
+}
+.social-strip-link:hover { color: var(--gold); }
+.social-strip-link svg { flex-shrink: 0; transition: transform 0.3s ease; }
+.social-strip-link:hover svg { transform: scale(1.15); }
 
 /* ========== SCROLL REVEAL ========== */
 .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }

@@ -1,791 +1,419 @@
 /* ============================================================
-   ElSEOLatino — SEO Checker styles
-   Uses :root tokens from styles.css (--navy-deep, --gold, etc.)
+   ElSEOLatino — SEO Checker engine
+   Integrates with main.js language toggle (textContent-based)
    ============================================================ */
+(function() {
+  'use strict';
 
-.seo-check-vars { /* anchor */ }
-
-:root {
-  --check-pass: #00d4aa;
-  --check-warn: #f0c45a;
-  --check-fail: #ef4444;
-}
-
-.checker-container {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-/* ========== HERO ========== */
-.checker-hero {
-  position: relative;
-  padding: 140px 0 80px;
-  background: var(--navy-deep);
-  overflow: hidden;
-}
-.checker-hero-bg {
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(ellipse at top right, var(--electric-glow) 0%, transparent 55%),
-    radial-gradient(ellipse at bottom left, rgba(212, 168, 67, 0.08) 0%, transparent 55%);
-  pointer-events: none;
-}
-.checker-hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(79, 143, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(79, 143, 255, 0.04) 1px, transparent 1px);
-  background-size: 60px 60px;
-  pointer-events: none;
-  opacity: 0.5;
-}
-.checker-hero .checker-container { position: relative; z-index: 2; }
-
-.breadcrumb {
-  font-family: 'Space Mono', monospace;
-  font-size: 12px;
-  color: var(--text-lighter);
-  margin-bottom: 28px;
-  letter-spacing: 0.05em;
-}
-.breadcrumb a {
-  color: var(--text-light);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.breadcrumb a:hover { color: var(--gold); }
-.bc-sep { margin: 0 10px; color: var(--text-lighter); }
-
-.checker-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  font-family: 'Space Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.2em;
-  color: var(--gold);
-  margin-bottom: 24px;
-  padding: 8px 16px;
-  background: rgba(212, 168, 67, 0.08);
-  border: 1px solid rgba(212, 168, 67, 0.25);
-  border-radius: 100px;
-  text-transform: uppercase;
-}
-.checker-eyebrow-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--gold);
-  box-shadow: 0 0 12px rgba(212, 168, 67, 0.7);
-  animation: checker-pulse 2s infinite;
-}
-@keyframes checker-pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
-}
-
-.checker-h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  margin-bottom: 24px;
-  max-width: 18ch;
-  color: var(--white);
-}
-.checker-h1 em {
-  font-style: italic;
-  color: var(--gold);
-  font-weight: 400;
-  position: relative;
-}
-.checker-h1 em::after {
-  content: '';
-  position: absolute;
-  bottom: 4px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, var(--gold), transparent);
-  opacity: 0.5;
-}
-
-.checker-sub {
-  font-size: 1.1rem;
-  line-height: 1.65;
-  max-width: 620px;
-  color: var(--text-light);
-  margin-bottom: 40px;
-}
-
-/* ========== INPUT FORM ========== */
-.checker-form {
-  display: flex;
-  gap: 8px;
-  max-width: 720px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 8px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: var(--shadow-deep);
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-.checker-form:focus-within {
-  border-color: rgba(212, 168, 67, 0.5);
-  box-shadow: var(--shadow-deep), 0 0 0 4px rgba(212, 168, 67, 0.1);
-}
-
-.url-input {
-  flex: 1;
-  background: transparent;
-  border: none;
-  color: var(--white);
-  padding: 16px 20px;
-  font-family: 'Space Mono', monospace;
-  font-size: 0.95rem;
-  outline: none;
-  letter-spacing: -0.01em;
-}
-.url-input::placeholder { color: var(--text-lighter); }
-
-.check-btn {
-  background: linear-gradient(135deg, var(--gold), var(--gold-bright));
-  color: var(--navy-deep);
-  border: none;
-  padding: 16px 28px;
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 700;
-  font-size: 0.875rem;
-  letter-spacing: 0.05em;
-  cursor: pointer;
-  border-radius: 8px;
-  transition: all 0.2s;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-.check-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-gold);
-}
-.check-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
-.check-btn .arrow { transition: transform 0.2s; }
-.check-btn:hover .arrow { transform: translateX(3px); }
-
-.error-msg {
-  display: none;
-  background: rgba(239, 68, 68, 0.1);
-  border-left: 3px solid var(--check-fail);
-  color: #fecaca;
-  padding: 14px 18px;
-  margin-top: 16px;
-  font-size: 0.9rem;
-  border-radius: 6px;
-  max-width: 720px;
-}
-.error-msg.active { display: block; }
-
-.checker-features {
-  list-style: none;
-  margin: 32px 0 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  font-family: 'Space Mono', monospace;
-  font-size: 0.75rem;
-  color: var(--text-light);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-.checker-features li {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.checker-features li::before {
-  content: '✓';
-  color: var(--gold);
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-/* ========== LOADING ========== */
-.loading {
-  display: none;
-  margin-top: 48px;
-  padding: 40px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  text-align: center;
-  max-width: 720px;
-}
-.loading.active { display: block; }
-.loading-text {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.875rem;
-  color: var(--white);
-  margin-bottom: 20px;
-}
-.loading-bar {
-  height: 2px;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 2px;
-  overflow: hidden;
-  max-width: 400px;
-  margin: 0 auto 16px;
-}
-.loading-bar-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--electric), var(--gold));
-  width: 0%;
-  transition: width 0.4s ease;
-}
-.loading-step {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.7rem;
-  color: var(--text-lighter);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-/* ========== RESULTS ========== */
-.checker-results {
-  display: none;
-  padding: 80px 0;
-  background: var(--cream);
-  color: var(--navy-deep);
-}
-.checker-results.active { display: block; }
-
-.results-header {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 40px;
-  align-items: center;
-  padding: 32px 0;
-  border-top: 2px solid var(--navy-deep);
-  border-bottom: 1px solid rgba(10, 14, 39, 0.1);
-  margin-bottom: 48px;
-}
-
-.score-circle {
-  width: 180px;
-  height: 180px;
-  position: relative;
-}
-.score-svg { transform: rotate(-90deg); }
-.score-track { fill: none; stroke: rgba(10, 14, 39, 0.08); stroke-width: 10; }
-.score-bar { fill: none; stroke-width: 10; stroke-linecap: round; transition: stroke-dashoffset 1.5s cubic-bezier(0.4, 0, 0.2, 1); }
-.score-number {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.score-number .num {
-  font-family: 'Playfair Display', serif;
-  font-size: 3.5rem;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  color: var(--navy-deep);
-}
-.score-number .lbl {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.7rem;
-  color: rgba(10, 14, 39, 0.5);
-  margin-top: 6px;
-  letter-spacing: 0.1em;
-}
-
-.results-meta {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: rgba(10, 14, 39, 0.5);
-  margin-bottom: 10px;
-}
-.results-url {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
-  font-weight: 700;
-  word-break: break-all;
-  line-height: 1.2;
-  color: var(--navy-deep);
-}
-
-.score-grade { text-align: center; }
-.grade-letter {
-  font-family: 'Playfair Display', serif;
-  font-size: 6rem;
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.04em;
-}
-.grade-label {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: rgba(10, 14, 39, 0.6);
-  margin-top: 4px;
-}
-
-/* Categories */
-.categories {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1px;
-  background: rgba(10, 14, 39, 0.1);
-  border: 1px solid rgba(10, 14, 39, 0.1);
-  margin-bottom: 60px;
-  border-radius: 4px;
-  overflow: hidden;
-}
-.category {
-  background: var(--white);
-  padding: 24px;
-  transition: background 0.2s;
-}
-.category:hover { background: #fafafa; }
-.category-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 12px;
-}
-.category-name {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: rgba(10, 14, 39, 0.6);
-}
-.category-score {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.75rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-.category-bar {
-  height: 3px;
-  background: rgba(10, 14, 39, 0.08);
-  margin: 8px 0 12px;
-  overflow: hidden;
-  border-radius: 2px;
-}
-.category-bar-fill {
-  height: 100%;
-  width: 0%;
-  transition: width 1s ease 0.3s;
-  border-radius: 2px;
-}
-.category-status {
-  font-size: 0.875rem;
-  color: rgba(10, 14, 39, 0.7);
-  line-height: 1.45;
-}
-
-.section-eyebrow {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--gold-dark);
-  margin-bottom: 12px;
-  font-weight: 700;
-}
-
-.checker-h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-bottom: 32px;
-  line-height: 1.1;
-  color: var(--navy-deep);
-}
-.checker-h2 em {
-  font-style: italic;
-  color: var(--gold-dark);
-  font-weight: 400;
-}
-
-/* Findings */
-.findings-section { margin-bottom: 60px; }
-.finding {
-  border-bottom: 1px solid rgba(10, 14, 39, 0.1);
-  padding: 22px 0;
-  display: grid;
-  grid-template-columns: 40px 1fr auto;
-  gap: 20px;
-  align-items: start;
-}
-.finding:first-child { border-top: 1px solid rgba(10, 14, 39, 0.1); }
-.finding-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--white);
-  font-weight: 700;
-  font-size: 0.875rem;
-  flex-shrink: 0;
-}
-.finding.pass .finding-icon { background: var(--check-pass); }
-.finding.warn .finding-icon { background: var(--gold-dark); }
-.finding.fail .finding-icon { background: var(--check-fail); }
-.finding-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.125rem;
-  font-weight: 700;
-  margin-bottom: 4px;
-  color: var(--navy-deep);
-}
-.finding-detail {
-  font-size: 0.875rem;
-  color: rgba(10, 14, 39, 0.7);
-  line-height: 1.55;
-}
-.finding-detail code {
-  background: rgba(212, 168, 67, 0.15);
-  color: var(--gold-dark);
-  padding: 2px 6px;
-  border-radius: 3px;
-  font-family: 'Space Mono', monospace;
-  font-size: 0.8rem;
-  word-break: break-all;
-}
-.finding-tag {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.65rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: rgba(10, 14, 39, 0.45);
-  white-space: nowrap;
-  align-self: center;
-}
-
-/* ========== EMAIL GATE ========== */
-.gate {
-  background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-mid) 100%);
-  color: var(--white);
-  padding: 64px 56px;
-  margin: 60px 0;
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 32px 80px rgba(10, 14, 39, 0.25);
-}
-.gate::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -20%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(212, 168, 67, 0.15) 0%, transparent 60%);
-  pointer-events: none;
-}
-.gate-badge {
-  position: absolute;
-  top: 24px;
-  right: 32px;
-  font-family: 'Space Mono', monospace;
-  font-size: 0.7rem;
-  color: var(--gold);
-  letter-spacing: 0.25em;
-  font-weight: 700;
-  background: rgba(212, 168, 67, 0.12);
-  border: 1px solid rgba(212, 168, 67, 0.3);
-  padding: 6px 14px;
-  border-radius: 100px;
-  z-index: 2;
-}
-.gate-eyebrow {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--gold);
-  margin-bottom: 20px;
-  position: relative;
-  z-index: 1;
-}
-.gate-h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.75rem, 4vw, 2.75rem);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  margin-bottom: 20px;
-  max-width: 22ch;
-  position: relative;
-  z-index: 1;
-  color: var(--white);
-}
-.gate-h2 em {
-  font-style: italic;
-  color: var(--gold);
-  font-weight: 400;
-}
-.gate-p {
-  font-size: 1rem;
-  line-height: 1.65;
-  max-width: 580px;
-  color: var(--text-light);
-  margin-bottom: 32px;
-  position: relative;
-  z-index: 1;
-}
-.gate-stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 32px;
-  margin: 32px 0 40px;
-  padding: 28px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-  position: relative;
-  z-index: 1;
-}
-.gate-stat-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: var(--gold);
-  line-height: 1;
-}
-.gate-stat-label {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--text-light);
-  margin-top: 8px;
-}
-.gate-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  max-width: 640px;
-  position: relative;
-  z-index: 1;
-}
-.gate-input-full { grid-column: span 2; }
-.gate-form .gate-submit { grid-column: span 2; }
-.gate-input {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  color: var(--white);
-  padding: 14px 18px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.9rem;
-  outline: none;
-  border-radius: 6px;
-  transition: border-color 0.2s, background 0.2s;
-}
-.gate-input:focus {
-  border-color: var(--gold);
-  background: rgba(255, 255, 255, 0.08);
-}
-.gate-input::placeholder { color: var(--text-lighter); }
-.gate-submit {
-  background: linear-gradient(135deg, var(--gold), var(--gold-bright));
-  color: var(--navy-deep);
-  border: none;
-  padding: 16px 32px;
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 700;
-  font-size: 0.875rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  cursor: pointer;
-  border-radius: 6px;
-  transition: all 0.2s;
-}
-.gate-submit:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-gold);
-}
-.gate-fineprint {
-  font-size: 0.75rem;
-  color: var(--text-lighter);
-  margin-top: 16px;
-  font-family: 'Space Mono', monospace;
-  letter-spacing: 0.03em;
-  position: relative;
-  z-index: 1;
-}
-.gate-success {
-  display: none;
-  text-align: center;
-  padding: 24px 0;
-  position: relative;
-  z-index: 1;
-}
-.gate-success.active { display: block; }
-.gate.submitted .gate-form,
-.gate.submitted .gate-stats,
-.gate.submitted .gate-fineprint,
-.gate.submitted .gate-p { display: none; }
-.check-icon {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: var(--check-pass);
-  color: var(--white);
-  font-size: 2rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 16px;
-}
-.gate-success h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.75rem;
-  margin-bottom: 8px;
-  color: var(--gold);
-}
-.gate-success p {
-  color: var(--text-light);
-  max-width: 420px;
-  margin: 0 auto;
-}
-
-/* ========== LOCKED PREVIEW ========== */
-.locked-section {
-  position: relative;
-  margin-bottom: 60px;
-}
-.locked-content {
-  filter: blur(6px);
-  pointer-events: none;
-  user-select: none;
-  opacity: 0.55;
-}
-.lock-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(180deg, transparent 0%, var(--cream) 70%);
-  pointer-events: none;
-}
-.lock-msg {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--gold);
-  background: var(--navy-deep);
-  padding: 14px 28px;
-  border: 1px solid rgba(212, 168, 67, 0.4);
-  border-radius: 100px;
-  font-weight: 700;
-}
-
-/* ========== COMPETITOR CARD ========== */
-.competitor-card {
-  background: linear-gradient(135deg, rgba(212, 168, 67, 0.08) 0%, rgba(79, 143, 255, 0.04) 100%);
-  border-left: 4px solid var(--gold);
-  padding: 32px 36px;
-  border-radius: 8px;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 24px;
-  align-items: center;
-}
-.competitor-icon {
-  font-size: 3rem;
-  line-height: 1;
-}
-.competitor-card h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: var(--navy-deep);
-}
-.competitor-card p {
-  font-size: 0.9rem;
-  color: rgba(10, 14, 39, 0.75);
-  line-height: 1.55;
-  margin: 0;
-}
-
-/* ========== BOTTOM CTA SECTION ========== */
-.checker-cta-section {
-  background: var(--navy-deep);
-  padding: 60px 0 80px;
-}
-.checker-cta-section .service-cta-box {
-  margin-top: 0;
-}
-
-/* ========== ANIMATIONS ========== */
-@keyframes checker-fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.checker-fade { animation: checker-fadeUp 0.6s ease both; }
-
-/* ========== RESPONSIVE ========== */
-@media (max-width: 900px) {
-  .results-header {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 24px;
+  function getLang() {
+    return document.documentElement.lang || 'es';
   }
-  .score-circle { margin: 0 auto; }
-  .results-url { text-align: center; }
-}
 
-@media (max-width: 768px) {
-  .checker-hero { padding: 120px 0 60px; }
-  .checker-form { flex-direction: column; padding: 12px; gap: 12px; }
-  .url-input { padding: 14px 16px; }
-  .check-btn { width: 100%; justify-content: center; padding: 14px 24px; }
-  .gate { padding: 48px 28px; }
-  .gate-form { grid-template-columns: 1fr; }
-  .gate-input-full,
-  .gate-form .gate-submit { grid-column: span 1; }
-  .competitor-card {
-    grid-template-columns: 1fr;
-    text-align: center;
-    padding: 28px 24px;
-  }
-  .finding {
-    grid-template-columns: 32px 1fr;
-    gap: 16px;
-  }
-  .finding-tag { grid-column: 2; margin-top: 4px; }
-  .checker-features { gap: 16px; }
-}
+  // ============================================================
+  // FETCH (Netlify Function with public-proxy fallback)
+  // ============================================================
+  async function fetchSite(url) {
+    // Try own Netlify Function first
+    try {
+      const res = await fetch('/.netlify/functions/fetch-site?url=' + encodeURIComponent(url));
+      if (res.ok) {
+        const data = await res.json();
+        if (data && data.contents) return data.contents;
+      }
+    } catch (e) { /* fall through */ }
 
-@media (max-width: 480px) {
-  .checker-hero { padding: 100px 0 50px; }
-  .gate { padding: 36px 20px; }
-  .gate-badge { top: 16px; right: 16px; font-size: 0.65rem; padding: 4px 10px; }
-  .gate-stats { gap: 20px; }
-  .gate-stat-num { font-size: 1.8rem; }
-  .checker-cta-section { padding: 40px 0 60px; }
-}
+    // Fallback: public proxy
+    try {
+      const res = await fetch('https://api.allorigins.win/get?url=' + encodeURIComponent(url));
+      if (!res.ok) throw new Error('Fetch failed');
+      const data = await res.json();
+      return data.contents;
+    } catch (e) {
+      throw new Error('Could not fetch site');
+    }
+  }
+
+  function normalizeUrl(input) {
+    let url = (input || '').trim();
+    if (!url) return null;
+    if (!/^https?:\/\//i.test(url)) url = 'https://' + url;
+    try { new URL(url); return url; } catch { return null; }
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  }
+
+  // ============================================================
+  // ANALYSIS ENGINE
+  // ============================================================
+  function analyzeHTML(html, url) {
+    const lang = getLang();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, 'text/html');
+    const findings = [];
+    const categories = {};
+
+    // helpers for bilingual text
+    const t = (es, en) => lang === 'es' ? es : en;
+
+    // ============ META & TITLE (30 pts) ============
+    let metaScore = 0, metaMax = 30;
+    const title = doc.querySelector('title')?.textContent?.trim() || '';
+    if (!title) {
+      findings.push({ status: 'fail', title: t('Falta el título de la página', 'Missing page title'), detail: t('No se encontró etiqueta &lt;title&gt;. Es el elemento on-page más importante.', 'No &lt;title&gt; tag found. The single most important on-page SEO element.'), tag: 'Meta', severity: 10 });
+    } else if (title.length < 30) {
+      findings.push({ status: 'warn', title: t(`Título muy corto (${title.length} caracteres)`, `Title too short (${title.length} chars)`), detail: t(`Actual: <code>${escapeHtml(title)}</code>. Apunta a 50-60 caracteres con keyword principal.`, `Current: <code>${escapeHtml(title)}</code>. Aim for 50-60 characters with primary keyword.`), tag: 'Meta', severity: 5 });
+      metaScore += 5;
+    } else if (title.length > 65) {
+      findings.push({ status: 'warn', title: t(`Título muy largo (${title.length} caracteres)`, `Title too long (${title.length} chars)`), detail: t('Se cortará en SERPs. Reduce a 50-60 caracteres.', 'Will be truncated in SERPs. Trim to 50-60 characters.'), tag: 'Meta', severity: 4 });
+      metaScore += 6;
+    } else {
+      findings.push({ status: 'pass', title: t('Título óptimo', 'Title length optimal'), detail: t(`${title.length} caracteres — rango ideal. <code>${escapeHtml(title)}</code>`, `${title.length} characters — ideal range. <code>${escapeHtml(title)}</code>`), tag: 'Meta', severity: 0 });
+      metaScore += 10;
+    }
+
+    const metaDesc = doc.querySelector('meta[name="description"]')?.getAttribute('content')?.trim() || '';
+    if (!metaDesc) {
+      findings.push({ status: 'fail', title: t('Falta meta descripción', 'Missing meta description'), detail: t('Sin meta description, Google genera un snippet pobre del contenido.', 'Without it, Google generates a poor snippet from page content.'), tag: 'Meta', severity: 9 });
+    } else if (metaDesc.length < 70) {
+      findings.push({ status: 'warn', title: t(`Meta descripción muy corta (${metaDesc.length} caracteres)`, `Meta description too short (${metaDesc.length} chars)`), detail: t('Estás dejando espacio en SERPs. Apunta a 140-160 caracteres.', 'Leaving SERP real estate on the table. Aim for 140-160 characters.'), tag: 'Meta', severity: 4 });
+      metaScore += 5;
+    } else if (metaDesc.length > 165) {
+      findings.push({ status: 'warn', title: t(`Meta descripción muy larga (${metaDesc.length} caracteres)`, `Meta description too long (${metaDesc.length} chars)`), detail: t('Se cortará. Reduce a 150-160.', 'Will be truncated. Trim to 150-160 characters.'), tag: 'Meta', severity: 3 });
+      metaScore += 7;
+    } else {
+      findings.push({ status: 'pass', title: t('Meta descripción correcta', 'Meta description length good'), detail: t(`${metaDesc.length} caracteres — rango óptimo.`, `${metaDesc.length} characters — optimal range.`), tag: 'Meta', severity: 0 });
+      metaScore += 10;
+    }
+
+    if (!doc.querySelector('link[rel="canonical"]')) {
+      findings.push({ status: 'warn', title: t('Sin URL canónica', 'No canonical URL set'), detail: t('Sin canonical, problemas de contenido duplicado son más probables.', 'Without a canonical tag, duplicate content issues are more likely.'), tag: 'Meta', severity: 5 });
+    } else {
+      metaScore += 5;
+    }
+
+    const robots = doc.querySelector('meta[name="robots"]')?.getAttribute('content') || '';
+    if (robots.includes('noindex')) {
+      findings.push({ status: 'fail', title: t('Página NOINDEX', 'Page set to NOINDEX'), detail: t('Esta página bloquea explícitamente los motores de búsqueda.', 'This page explicitly blocks search engines.'), tag: 'Indexability', severity: 10 });
+    } else {
+      metaScore += 5;
+    }
+
+    categories.meta = { score: Math.round((metaScore / metaMax) * 100), name: t('Meta y Tags', 'Meta & Tags') };
+
+    // ============ HEADINGS & CONTENT (30 pts) ============
+    let contentScore = 0, contentMax = 30;
+    const h1s = doc.querySelectorAll('h1');
+    if (h1s.length === 0) {
+      findings.push({ status: 'fail', title: t('Sin encabezado H1', 'No H1 heading found'), detail: t('Cada página debe tener un H1 con la keyword principal.', 'Every page should have one H1 containing the primary keyword.'), tag: 'Content', severity: 9 });
+    } else if (h1s.length > 1) {
+      findings.push({ status: 'warn', title: t(`Múltiples H1 (${h1s.length})`, `Multiple H1 tags (${h1s.length})`), detail: t('Mejor práctica: un solo H1 por página.', 'Best practice is a single H1 per page.'), tag: 'Content', severity: 4 });
+      contentScore += 5;
+    } else {
+      findings.push({ status: 'pass', title: t('H1 único detectado', 'Single H1 detected'), detail: `<code>${escapeHtml(h1s[0].textContent.trim().slice(0, 100))}</code>`, tag: 'Content', severity: 0 });
+      contentScore += 10;
+    }
+
+    const h2s = doc.querySelectorAll('h2');
+    if (h2s.length === 0) {
+      findings.push({ status: 'warn', title: t('Sin subtítulos H2', 'No H2 subheadings'), detail: t('Los H2 ayudan a Google a entender la estructura.', 'H2s help Google understand page structure.'), tag: 'Content', severity: 4 });
+    } else {
+      contentScore += 5;
+    }
+
+    const bodyText = doc.body?.innerText || doc.body?.textContent || '';
+    const wordCount = bodyText.split(/\s+/).filter(Boolean).length;
+    if (wordCount < 300) {
+      findings.push({ status: 'fail', title: t(`Contenido escaso (${wordCount} palabras)`, `Thin content (${wordCount} words)`), detail: t('Páginas con menos de 300 palabras raramente posicionan.', 'Pages under 300 words rarely rank for competitive terms.'), tag: 'Content', severity: 8 });
+    } else if (wordCount < 600) {
+      findings.push({ status: 'warn', title: t(`Contenido ligero (${wordCount} palabras)`, `Light content (${wordCount} words)`), detail: t('Aceptable, pero nichos competitivos necesitan 800-1500 palabras.', 'Decent length but competitive niches typically need 800-1500 words.'), tag: 'Content', severity: 4 });
+      contentScore += 8;
+    } else {
+      findings.push({ status: 'pass', title: t(`Buena profundidad (${wordCount} palabras)`, `Strong content depth (${wordCount} words)`), detail: t('Profundidad suficiente para queries competitivas.', 'Sufficient depth for most competitive queries.'), tag: 'Content', severity: 0 });
+      contentScore += 15;
+    }
+
+    categories.content = { score: Math.round((contentScore / contentMax) * 100), name: t('Contenido', 'Content') };
+
+    // ============ TECHNICAL (25 pts) ============
+    let techScore = 0, techMax = 25;
+    if (!url.startsWith('https://')) {
+      findings.push({ status: 'fail', title: t('Sitio sin HTTPS', 'Site not on HTTPS'), detail: t('HTTPS es señal de ranking confirmada.', 'HTTPS is a confirmed ranking signal.'), tag: 'Security', severity: 9 });
+    } else {
+      techScore += 8;
+    }
+
+    if (!doc.querySelector('meta[name="viewport"]')) {
+      findings.push({ status: 'fail', title: t('Falta meta viewport', 'Missing viewport meta tag'), detail: t('Sin esto, el render móvil falla. Penalización mobile-first.', 'Without it, mobile rendering breaks. Mobile-first indexing penalty.'), tag: 'Mobile', severity: 9 });
+    } else {
+      techScore += 7;
+    }
+
+    if (!doc.documentElement.getAttribute('lang')) {
+      findings.push({ status: 'warn', title: t('Sin idioma declarado', 'No language declared'), detail: t('Agrega lang="es" al &lt;html&gt; para accesibilidad.', 'Add lang="en" to &lt;html&gt; for accessibility & i18n signals.'), tag: 'Technical', severity: 3 });
+    } else {
+      techScore += 5;
+    }
+
+    if (doc.querySelector('meta[charset]')) techScore += 5;
+
+    categories.technical = { score: Math.round((techScore / techMax) * 100), name: t('Técnico', 'Technical') };
+
+    // ============ IMAGES (10 pts) ============
+    let imgScore = 0, imgMax = 10;
+    const imgs = doc.querySelectorAll('img');
+    if (imgs.length > 0) {
+      const missingAlt = Array.from(imgs).filter(img => !img.getAttribute('alt') || img.getAttribute('alt').trim() === '');
+      const altCoverage = ((imgs.length - missingAlt.length) / imgs.length) * 100;
+      if (altCoverage < 60) {
+        findings.push({ status: 'fail', title: t(`Cobertura alt baja (${Math.round(altCoverage)}%)`, `Poor image alt coverage (${Math.round(altCoverage)}%)`), detail: t(`${missingAlt.length} de ${imgs.length} imágenes sin alt text.`, `${missingAlt.length} of ${imgs.length} images missing alt text. Hurts accessibility & image search.`), tag: 'Images', severity: 6 });
+        imgScore += 2;
+      } else if (altCoverage < 90) {
+        findings.push({ status: 'warn', title: t(`Alt en ${Math.round(altCoverage)}%`, `Image alt coverage at ${Math.round(altCoverage)}%`), detail: t(`${missingAlt.length} imágenes necesitan alt.`, `${missingAlt.length} images need alt text.`), tag: 'Images', severity: 3 });
+        imgScore += 6;
+      } else {
+        findings.push({ status: 'pass', title: t('Alt bien cubierto', 'Image alt coverage strong'), detail: t(`${Math.round(altCoverage)}% de imágenes con alt.`, `${Math.round(altCoverage)}% of images have alt text.`), tag: 'Images', severity: 0 });
+        imgScore += 10;
+      }
+    } else {
+      imgScore += 5;
+    }
+    categories.images = { score: Math.round((imgScore / imgMax) * 100), name: t('Imágenes', 'Images') };
+
+    // ============ SCHEMA (15 pts) ============
+    let schemaScore = 0, schemaMax = 15;
+    const jsonLd = doc.querySelectorAll('script[type="application/ld+json"]');
+    if (jsonLd.length === 0) {
+      findings.push({ status: 'fail', title: t('Sin datos estructurados (Schema.org)', 'No structured data (Schema.org)'), detail: t('Sin JSON-LD no hay rich snippets ni visibilidad en búsqueda con IA.', 'Missing JSON-LD prevents rich snippets, knowledge panels, and AI search visibility.'), tag: 'Schema', severity: 7 });
+    } else {
+      findings.push({ status: 'pass', title: t(`${jsonLd.length} bloque(s) de datos estructurados`, `${jsonLd.length} structured data block(s)`), detail: t('Schema.org JSON-LD detectado.', 'Schema.org JSON-LD detected — good foundation.'), tag: 'Schema', severity: 0 });
+      schemaScore += 15;
+    }
+    categories.schema = { score: Math.round((schemaScore / schemaMax) * 100), name: 'Schema' };
+
+    // ============ SOCIAL / OG (10 pts) ============
+    let socialScore = 0, socialMax = 10;
+    const ogTitle = doc.querySelector('meta[property="og:title"]');
+    const ogDesc = doc.querySelector('meta[property="og:description"]');
+    const ogImage = doc.querySelector('meta[property="og:image"]');
+    if (ogTitle) socialScore += 3;
+    if (ogDesc) socialScore += 3;
+    if (ogImage) socialScore += 4;
+    if (!ogTitle || !ogDesc || !ogImage) {
+      findings.push({ status: 'warn', title: t('Open Graph incompleto', 'Incomplete Open Graph tags'), detail: t('Faltan tags OG — afecta previews al compartir y CTR.', 'Missing OG tags hurt social sharing previews and CTR.'), tag: 'Social', severity: 3 });
+    }
+    categories.social = { score: Math.round((socialScore / socialMax) * 100), name: t('Social', 'Social Tags') };
+
+    // ============ LINKS (10 pts) ============
+    let linkScore = 0, linkMax = 10;
+    let internal = 0, external = 0;
+    try {
+      const host = new URL(url).hostname;
+      doc.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href');
+        if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+        try {
+          const linkHost = new URL(href, url).hostname;
+          if (linkHost === host) internal++; else external++;
+        } catch { /* skip */ }
+      });
+    } catch { /* skip */ }
+
+    if (internal < 3) {
+      findings.push({ status: 'warn', title: t('Linking interno débil', 'Weak internal linking'), detail: t(`Solo ${internal} enlaces internos. Distribuyen PageRank y ayudan al crawl.`, `Only ${internal} internal links found. Internal links distribute PageRank and aid crawling.`), tag: 'Links', severity: 4 });
+      linkScore += 4;
+    } else {
+      linkScore += 10;
+    }
+    categories.links = { score: Math.round((linkScore / linkMax) * 100), name: t('Enlaces', 'Links') };
+
+    // ============ OVERALL SCORE ============
+    const totalEarned = metaScore + contentScore + techScore + imgScore + schemaScore + socialScore + linkScore;
+    const totalMax = metaMax + contentMax + techMax + imgMax + schemaMax + socialMax + linkMax;
+    const overall = Math.round((totalEarned / totalMax) * 100);
+
+    findings.sort((a, b) => b.severity - a.severity);
+    return { overall, categories, findings, wordCount };
+  }
+
+  function getGrade(score) {
+    if (score >= 90) return { letter: 'A', color: '#00d4aa' };
+    if (score >= 80) return { letter: 'B', color: '#5a8a3e' };
+    if (score >= 70) return { letter: 'C', color: '#d4a843' };
+    if (score >= 60) return { letter: 'D', color: '#b8902e' };
+    return { letter: 'F', color: '#ef4444' };
+  }
+
+  function getCategoryColor(score) {
+    if (score >= 80) return '#00d4aa';
+    if (score >= 60) return '#d4a843';
+    if (score >= 40) return '#b8902e';
+    return '#ef4444';
+  }
+
+  // ============================================================
+  // FORM HANDLING
+  // ============================================================
+  const form = document.getElementById('checkerForm');
+  if (!form) return; // not on the checker page
+
+  const urlInput = document.getElementById('urlInput');
+  const checkBtn = document.getElementById('checkBtn');
+  const loading = document.getElementById('loading');
+  const loadingFill = document.getElementById('loadingFill');
+  const loadingText = document.getElementById('loadingText');
+  const loadingStep = document.getElementById('loadingStep');
+  const errorMsg = document.getElementById('errorMsg');
+  const results = document.getElementById('results');
+
+  const loadingMessages = [
+    { es: 'Obteniendo contenido del sitio...', en: 'Fetching page contents...', pct: 15 },
+    { es: 'Analizando estructura HTML...', en: 'Parsing HTML structure...', pct: 30 },
+    { es: 'Inspeccionando meta y schema...', en: 'Inspecting meta tags & schema...', pct: 50 },
+    { es: 'Evaluando calidad del contenido...', en: 'Evaluating content quality...', pct: 68 },
+    { es: 'Análisis técnico con IA...', en: 'Running AI technical checks...', pct: 85 },
+    { es: 'Compilando reporte...', en: 'Compiling report...', pct: 100 }
+  ];
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    errorMsg.classList.remove('active');
+    results.classList.remove('active');
+
+    const url = normalizeUrl(urlInput.value);
+    const lang = getLang();
+    if (!url) {
+      errorMsg.textContent = lang === 'es' ? 'Por favor ingresa una URL válida.' : 'Please enter a valid URL.';
+      errorMsg.classList.add('active');
+      return;
+    }
+
+    checkBtn.disabled = true;
+    loading.classList.add('active');
+
+    for (let i = 0; i < loadingMessages.length; i++) {
+      const m = loadingMessages[i];
+      loadingText.textContent = m[lang];
+      loadingStep.textContent = lang === 'es' ? `Paso ${i + 1} de ${loadingMessages.length}` : `Step ${i + 1} of ${loadingMessages.length}`;
+      loadingFill.style.width = m.pct + '%';
+      await new Promise(r => setTimeout(r, 550));
+    }
+
+    try {
+      const html = await fetchSite(url);
+      const analysis = analyzeHTML(html, url);
+      renderResults(url, analysis);
+    } catch (err) {
+      loading.classList.remove('active');
+      errorMsg.textContent = lang === 'es'
+        ? 'No se pudo obtener esa URL. Puede que bloquee solicitudes automáticas. Intenta otro sitio.'
+        : 'Could not fetch that URL. The site may block automated requests. Try another site.';
+      errorMsg.classList.add('active');
+    } finally {
+      checkBtn.disabled = false;
+      loading.classList.remove('active');
+      loadingFill.style.width = '0%';
+    }
+  });
+
+  // ============================================================
+  // RENDER RESULTS
+  // ============================================================
+  function renderResults(url, analysis) {
+    const lang = getLang();
+    const { overall, categories, findings } = analysis;
+
+    document.getElementById('resultsUrl').textContent = url;
+    document.getElementById('auditDate').textContent = new Date().toLocaleDateString(lang === 'es' ? 'es-ES' : 'en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+
+    const scoreNum = document.getElementById('scoreNum');
+    const scoreBar = document.getElementById('scoreBar');
+    const grade = getGrade(overall);
+    const gradeLetter = document.getElementById('gradeLetter');
+    gradeLetter.textContent = grade.letter;
+    gradeLetter.style.color = grade.color;
+
+    scoreBar.style.stroke = grade.color;
+    scoreBar.style.strokeDashoffset = 502 - (overall / 100) * 502;
+
+    let displayScore = 0;
+    const interval = setInterval(() => {
+      displayScore += Math.max(1, Math.ceil((overall - displayScore) / 12));
+      if (displayScore >= overall) { displayScore = overall; clearInterval(interval); }
+      scoreNum.textContent = displayScore;
+    }, 30);
+
+    // Categories
+    const catContainer = document.getElementById('categories');
+    catContainer.innerHTML = '';
+    Object.values(categories).forEach((c, i) => {
+      const status = c.score >= 80 ? (lang === 'es' ? 'Buen desempeño — refinamientos menores posibles.' : 'Strong performance — minor refinements possible.')
+                    : c.score >= 60 ? (lang === 'es' ? 'Aceptable, mejoras recomendadas.' : 'Acceptable but improvements recommended.')
+                    : c.score >= 40 ? (lang === 'es' ? 'Necesita trabajo — varias brechas.' : 'Needs work — multiple gaps detected.')
+                    : (lang === 'es' ? 'Problemas críticos. Atender de inmediato.' : 'Critical issues. Address immediately.');
+
+      const div = document.createElement('div');
+      div.className = 'category checker-fade';
+      div.style.animationDelay = (i * 0.06) + 's';
+      div.innerHTML = `
+        <div class="category-header">
+          <div class="category-name">${c.name}</div>
+          <div class="category-score" style="color:${getCategoryColor(c.score)}">${c.score}</div>
+        </div>
+        <div class="category-bar"><div class="category-bar-fill" style="width:${c.score}%;background:${getCategoryColor(c.score)}"></div></div>
+        <div class="category-status">${status}</div>
+      `;
+      catContainer.appendChild(div);
+    });
+
+    // Findings
+    const findingsList = document.getElementById('findingsList');
+    findingsList.innerHTML = '';
+    const visible = findings.slice(0, 4);
+    const hiddenCount = Math.max(0, findings.length - 4);
+
+    visible.forEach((f, i) => {
+      const div = document.createElement('div');
+      div.className = `finding ${f.status} checker-fade`;
+      div.style.animationDelay = (i * 0.08) + 's';
+      const iconChar = f.status === 'pass' ? '✓' : f.status === 'warn' ? '!' : '×';
+      div.innerHTML = `
+        <div class="finding-icon">${iconChar}</div>
+        <div class="finding-body">
+          <div class="finding-title">${f.title}</div>
+          <div class="finding-detail">${f.detail}</div>
+        </div>
+        <div class="finding-tag">${f.tag}</div>
+      `;
+      findingsList.appendChild(div);
+    });
+
+    // Gate stats
+    const issues = findings.filter(f => f.status !== 'pass').length;
+    document.getElementById('hiddenIssues').textContent = Math.max(hiddenCount, issues);
+    document.getElementById('hiddenWins').textContent = Math.max(3, Math.round(issues * 0.6));
+    document.getElementById('competitorScore').textContent = Math.max(3, Math.round((100 - overall) / 8));
+
+    // Hidden form fields
+    document.getElementById('hiddenUrl').value = url;
+    document.getElementById('hiddenScore').value = overall;
+    document.getElementById('hiddenGrade').value = grade.letter;
+
+    results.classList.add('active');
+    setTimeout(() => results.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+  }
+
+  // Show success state if redirected from FormSubmit
+  if (window.location.search.includes('submitted=true')) {
+    setTimeout(() => {
+      const gate = document.getElementById('gate');
+      const gateSuccess = document.getElementById('gateSuccess');
+      if (gate && gateSuccess) {
+        gate.classList.add('submitted');
+        gateSuccess.classList.add('active');
+        gate.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }, 200);
+  }
+})();

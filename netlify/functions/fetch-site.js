@@ -1,0 +1,75 @@
+// Netlify Function: /.netlify/functions/fetch-site
+// CORS proxy for the SEO Checker. Validates URLs, blocks SSRF,
+// caps response size, enforces a 15s timeout.
+
+exports.handler = async (event) => {
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Content-Type': 'application/json'
+  };
+
+  if (event.httpMethod === 'OPTIONS') return { statusCode: 200, headers, body: '' };
+  if (event.httpMethod !== 'GET') {
+    return { statusCode: 405, headers, body: JSON.stringify({ error: 'Method not allowed' }) };
+  }
+
+  const targetUrl = event.queryStringParameters?.url;
+  if (!targetUrl) {
+    return { statusCode: 400, headers, body: JSON.stringify({ error: 'Missing url parameter' }) };
+  }
+
+  let parsedUrl;
+  try { parsedUrl = new URL(targetUrl); }
+  catch { return { statusCode: 400, headers, body: JSON.stringify({ error: 'Invalid URL' }) }; }
+
+  if (!['http:', 'https:'].includes(parsedUrl.protocol)) {
+    return { statusCode: 400, headers, body: JSON.stringify({ error: 'Only http(s) URLs allowed' }) };
+  }
+
+  // SSRF protection — block private/internal hosts
+  const hostname = parsedUrl.hostname.toLowerCase();
+  const blockedHosts = ['localhost', '127.0.0.1', '0.0.0.0', '::1'];
+  const isBlockedRange =
+    /^10\./.test(hostname) ||
+    /^192\.168\./.test(hostname) ||
+    /^172\.(1[6-9]|2\d|3[01])\./.test(hostname) ||
+    /^169\.254\./.test(hostname);
+  if (blockedHosts.includes(hostname) || isBlockedRange) {
+    return { statusCode: 403, headers, body: JSON.stringify({ error: 'Blocked address' }) };
+  }
+
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 15000);
+
+  try {
+    const response = await fetch(targetUrl, {
+      headers: {
+        'User-Agent': 'ElSEOLatino-SEO-Checker/1.0 (+https://elseolatino.com)',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.9,es;q=0.8'
+      },
+      signal: controller.signal,
+      redirect: 'follow'
+    });
+    clearTimeout(timeout);
+
+    if (!response.ok) {
+      return { statusCode: 200, headers, body: JSON.stringify({ error: `Site returned ${response.status}`, contents: '' }) };
+    }
+
+    const contentType = response.headers.get('content-type') || '';
+    if (!contentType.includes('text/html') && !contentType.includes('application/xhtml')) {
+      return { statusCode: 200, headers, body: JSON.stringify({ error: 'Not an HTML page', contents: '' }) };
+    }
+
+    const text = await response.text();
+    const truncated = text.length > 2_000_000 ? text.slice(0, 2_000_000) : text;
+
+    return { statusCode: 200, headers, body: JSON.stringify({ contents: truncated, finalUrl: response.url, status: response.status }) };
+  } catch (err) {
+    clearTimeout(timeout);
+    return { statusCode: 200, headers, body: JSON.stringify({ error: err.name === 'AbortError' ? 'Timeout' : 'Fetch failed', contents: '' }) };
+  }
+};

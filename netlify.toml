@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElSEOLatino — Marketing Digital con IA Para Negocios Latinos en EE.UU.</title>
+  <meta name="description" content="ElSEOLatino es la agencia #1 de marketing digital con inteligencia artificial para negocios latinos en Estados Unidos. SEO con IA, diseño web, videos de drone 4K, consultoría digital y más. Llama hoy: (224) 305-4785.">
+  <meta name="author" content="ElSEOLatino">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://elseolatino.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://elseolatino.com/">
+  <meta property="og:title" content="ElSEOLatino — Marketing Digital con IA Para Negocios Latinos">
+  <meta property="og:description" content="Agencia de marketing digital impulsada por inteligencia artificial. SEO, diseño web, videos de drone y más para negocios latinos en Estados Unidos.">
+  <meta property="og:image" content="https://elseolatino.com/hero-bg.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="es_US">
+  <meta property="og:site_name" content="ElSEOLatino">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ElSEOLatino — Marketing Digital con IA Para Negocios Latinos">
+  <meta name="twitter:description" content="Agencia #1 de marketing digital con IA para negocios latinos en EE.UU.">
+  <meta name="twitter:image" content="https://elseolatino.com/hero-bg.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0a0e27">
+  <link rel="alternate" hreflang="es" href="https://elseolatino.com/">
+  <link rel="alternate" hreflang="x-default" href="https://elseolatino.com/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"ElSEOLatino","alternateName":"El SEO Latino","description":"Agencia de marketing digital con inteligencia artificial para negocios latinos en Estados Unidos.","url":"https://elseolatino.com","telephone":"+1-224-305-4785","email":"marcoaguilarseo@gmail.com","image":"https://elseolatino.com/android-chrome-512x512.png","priceRange":"$$","address":{"@type":"PostalAddress","addressLocality":"Chicago","addressRegion":"IL","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":41.8781,"longitude":-87.6298},"areaServed":{"@type":"Country","name":"United States"},"knowsLanguage":["es","en"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Servicios de Marketing Digital","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"SEO con Inteligencia Artificial","url":"https://elseolatino.com/seo-con-ia.html"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Diseño Web Profesional","url":"https://elseolatino.com/diseno-web.html"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Videos de Drone 4K","url":"https://elseolatino.com/videos-drone.html"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Consultoría Digital","url":"https://elseolatino.com/consultoria-digital.html"}}]},"sameAs":["https://www.youtube.com/@ElSEOLatino","https://www.facebook.com/ElSEOLatino/"],"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"ElSEOLatino","url":"https://elseolatino.com","logo":"https://elseolatino.com/android-chrome-512x512.png","contactPoint":{"@type":"ContactPoint","telephone":"+1-224-305-4785","contactType":"customer service","availableLanguage":["Spanish","English"]}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"ElSEOLatino","url":"https://elseolatino.com","inLanguage":["es","en"]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
+  <noscript><style>.reveal{opacity:1;transform:none;}.hero-badge,.hero h1,.hero-sub,.hero-actions,.hero-stats,.hero-cards{opacity:1;transform:none;animation:none;}</style></noscript>
+
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Navegación principal">
+      <a href="/" class="nav-logo" aria-label="ElSEOLatino — Inicio"><span class="nav-logo-text"><span class="gold">El</span>SEO<span class="gold">Latino</span></span></a>
+      <ul class="nav-links">
+        <li><a href="/" aria-current="page" data-es="Inicio" data-en="Home">Inicio</a></li>
+        <li><a href="/seo-con-ia.html" data-es="SEO con IA" data-en="AI SEO">SEO con IA</a></li>
+        <li><a href="/diseno-web.html" data-es="Diseño Web" data-en="Web Design">Diseño Web</a></li>
+        <li><a href="/videos-drone.html" data-es="Drone Video" data-en="Drone Video">Drone Video</a></li><li><a href="/seo-checker.html" data-es="SEO Checker" data-en="SEO Checker">SEO Checker</a></li>
+        <li><a href="#resultados" data-es="Resultados" data-en="Results">Resultados</a></li>
+        <li><a href="/blog.html" data-es="Blog" data-en="Blog">Blog</a></li>
+        <li><a href="#contacto" class="nav-cta" data-es="Consulta Gratis" data-en="Free Consult">Consulta Gratis</a></li>
+      </ul>
+      <button class="lang-toggle" aria-label="Switch to English"><span class="lang-flag">🇺🇸</span></button>
+      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" aria-label="Presentación principal">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-geo-1" aria-hidden="true"></div>
+      <div class="hero-geo-2" aria-hidden="true"></div>
+      <div class="hero-geo-3" aria-hidden="true"></div>
+      <div class="hero-content">
+        <div class="hero-badge" data-es="Marketing con Inteligencia Artificial" data-en="AI-Powered Marketing">Marketing con Inteligencia Artificial</div>
+        <h1><span data-es="Tu Negocio" data-en="Your Business">Tu Negocio</span><br><em data-es="Merece Crecer" data-en="Deserves to Grow">Merece Crecer</em><span data-es=" con " data-en=" with "> con </span><span class="ai-text" data-es="IA" data-en="AI">IA</span></h1>
+        <p class="hero-sub" data-es="Somos la agencia de marketing digital que combina inteligencia artificial con estrategia cultural para impulsar negocios latinos en Estados Unidos." data-en="We're the digital marketing agency that combines artificial intelligence with cultural strategy to empower Latino businesses in the United States.">Somos la agencia de marketing digital que combina inteligencia artificial con estrategia cultural para impulsar negocios latinos en Estados Unidos.</p>
+        <div class="hero-actions">
+          <a href="tel:+12243054785" class="btn-primary">📞 <span data-es="Llama Ahora" data-en="Call Now">Llama Ahora</span></a>
+          <a href="#servicios" class="btn-secondary">↓ <span data-es="Ver Servicios" data-en="See Services">Ver Servicios</span></a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><div class="stat-number">150+</div><div class="stat-label" data-es="Clientes" data-en="Clients">Clientes</div></div>
+          <div class="stat"><div class="stat-number">3x</div><div class="stat-label" data-es="Más Tráfico" data-en="More Traffic">Más Tráfico</div></div>
+          <div class="stat"><div class="stat-number">24/7</div><div class="stat-label" data-es="IA Activa" data-en="AI Active">IA Activa</div></div>
+        </div>
+      </div>
+      <div class="hero-cards" aria-hidden="true">
+        <div class="hero-card"><div class="hero-card-icon">🤖</div><div class="hero-card-title" data-es="SEO Automatizado" data-en="Automated SEO">SEO Automatizado</div><div class="hero-card-desc" data-es="Rankings optimizados con machine learning en tiempo real" data-en="Rankings optimized with real-time machine learning">Rankings optimizados con machine learning en tiempo real</div><span class="ai-badge">AI Powered</span></div>
+        <div class="hero-card"><div class="hero-card-icon">📈</div><div class="hero-card-title" data-es="Análisis Predictivo" data-en="Predictive Analytics">Análisis Predictivo</div><div class="hero-card-desc" data-es="Anticipamos tendencias antes que tu competencia" data-en="We anticipate trends before your competition">Anticipamos tendencias antes que tu competencia</div><span class="ai-badge">Deep Learning</span></div>
+        <div class="hero-card"><div class="hero-card-icon">🎯</div><div class="hero-card-title" data-es="Contenido Inteligente" data-en="Smart Content">Contenido Inteligente</div><div class="hero-card-desc" data-es="Contenido bilingüe optimizado con NLP avanzado" data-en="Bilingual content optimized with advanced NLP">Contenido bilingüe optimizado con NLP avanzado</div><span class="ai-badge">NLP</span></div>
+      </div>
+    </section>
+
+    <!-- SOCIAL STRIP -->
+    <div class="social-strip">
+      <a href="https://www.youtube.com/@ElSEOLatino" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="social-strip-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        <span>YouTube</span>
+      </a>
+      <a href="https://www.facebook.com/ElSEOLatino/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-strip-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        <span>Facebook</span>
+      </a>
+    </div>
+
+    <!-- AI ADVANTAGE -->
+    <section class="ai-advantage" id="ventaja-ia" aria-labelledby="ai-title">
+      <div class="ai-advantage-header">
+        <p class="section-eyebrow" data-es="¿Por Qué IA?" data-en="Why AI?">¿Por Qué IA?</p>
+        <h2 class="section-title" id="ai-title" data-es="La Ventaja de la Inteligencia Artificial" data-en="The Artificial Intelligence Advantage">La Ventaja de la Inteligencia Artificial</h2>
+        <p class="section-subtitle" data-es="Mientras otros adivinan, nosotros usamos datos. Nuestra IA analiza millones de señales para posicionar tu negocio." data-en="While others guess, we use data. Our AI analyzes millions of signals to position your business.">Mientras otros adivinan, nosotros usamos datos. Nuestra IA analiza millones de señales para posicionar tu negocio.</p>
+      </div>
+      <div class="ai-grid">
+        <div class="ai-card reveal"><div class="ai-card-icon">🧠</div><h3 data-es="Análisis Semántico" data-en="Semantic Analysis">Análisis Semántico</h3><p data-es="Nuestra IA entiende la intención detrás de cada búsqueda, no solo las palabras clave." data-en="Our AI understands the intent behind every search, not just the keywords.">Nuestra IA entiende la intención detrás de cada búsqueda, no solo las palabras clave.</p><span class="tech-tag">NLP Engine</span></div>
+        <div class="ai-card reveal"><div class="ai-card-icon">⚡</div><h3 data-es="Optimización en Tiempo Real" data-en="Real-Time Optimization">Optimización en Tiempo Real</h3><p data-es="Ajustamos estrategias automáticamente basándonos en cambios de algoritmo y competencia." data-en="We automatically adjust strategies based on algorithm changes and competition.">Ajustamos estrategias automáticamente basándonos en cambios de algoritmo y competencia.</p><span class="tech-tag">Auto-Optimize</span></div>
+        <div class="ai-card reveal"><div class="ai-card-icon">📊</div><h3 data-es="Reportes Predictivos" data-en="Predictive Reports">Reportes Predictivos</h3><p data-es="No solo mostramos qué pasó — predecimos qué va a pasar. Decisiones con datos del futuro." data-en="We don't just show what happened — we predict what will. Decisions powered by future data.">No solo mostramos qué pasó — predecimos qué va a pasar. Decisiones con datos del futuro.</p><span class="tech-tag">Forecasting</span></div>
+      </div>
+      <div class="ai-compare reveal">
+        <h3 class="ai-compare-title" data-es="ElSEOLatino vs. Agencia Tradicional" data-en="ElSEOLatino vs. Traditional Agency">ElSEOLatino vs. Agencia Tradicional</h3>
+        <div class="compare-row"><div class="compare-label"><span data-es="Velocidad de Resultados" data-en="Speed of Results">Velocidad de Resultados</span></div><div class="compare-bars"><div class="compare-bar"><div class="compare-bar-fill ours" data-width="92%"></div></div><div class="compare-bar"><div class="compare-bar-fill theirs" data-width="35%"></div></div></div><div style="display:flex;justify-content:space-between;margin-top:6px;"><span class="compare-bar-label highlight">ElSEOLatino + IA</span><span class="compare-bar-label" data-es="Agencia tradicional" data-en="Traditional agency">Agencia tradicional</span></div></div>
+        <div class="compare-row"><div class="compare-label"><span data-es="Precisión de Keywords" data-en="Keyword Accuracy">Precisión de Keywords</span></div><div class="compare-bars"><div class="compare-bar"><div class="compare-bar-fill ours" data-width="88%"></div></div><div class="compare-bar"><div class="compare-bar-fill theirs" data-width="40%"></div></div></div><div style="display:flex;justify-content:space-between;margin-top:6px;"><span class="compare-bar-label highlight">ElSEOLatino + IA</span><span class="compare-bar-label" data-es="Agencia tradicional" data-en="Traditional agency">Agencia tradicional</span></div></div>
+        <div class="compare-row"><div class="compare-label"><span data-es="ROI Promedio" data-en="Average ROI">ROI Promedio</span></div><div class="compare-bars"><div class="compare-bar"><div class="compare-bar-fill ours" data-width="95%"></div></div><div class="compare-bar"><div class="compare-bar-fill theirs" data-width="30%"></div></div></div><div style="display:flex;justify-content:space-between;margin-top:6px;"><span class="compare-bar-label highlight">ElSEOLatino + IA</span><span class="compare-bar-label" data-es="Agencia tradicional" data-en="Traditional agency">Agencia tradicional</span></div></div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="servicios" id="servicios" aria-labelledby="servicios-title">
+      <div class="servicios-header">
+        <p class="section-eyebrow" data-es="Nuestros Servicios" data-en="Our Services">Nuestros Servicios</p>
+        <h2 class="section-title" id="servicios-title" data-es="Soluciones Digitales Completas" data-en="Complete Digital Solutions">Soluciones Digitales Completas</h2>
+        <p class="section-subtitle" data-es="Cada servicio está potenciado por inteligencia artificial y diseñado específicamente para negocios latinos." data-en="Every service is powered by AI and designed specifically for Latino businesses.">Cada servicio está potenciado por inteligencia artificial y diseñado específicamente para negocios latinos.</p>
+      </div>
+      <div class="servicios-grid">
+        <a href="/seo-con-ia.html" class="servicio-card featured reveal"><span class="servicio-number" aria-hidden="true">01</span><div class="servicio-icon">🤖</div><h3 data-es="SEO con Inteligencia Artificial" data-en="AI-Powered SEO">SEO con Inteligencia Artificial</h3><p data-es="Posicionamiento en Google potenciado por machine learning." data-en="Google ranking powered by machine learning.">Posicionamiento en Google potenciado por machine learning.</p><ul class="servicio-features"><li data-es="Investigación de keywords con IA" data-en="AI keyword research">Investigación de keywords con IA</li><li data-es="Optimización on-page automatizada" data-en="Automated on-page optimization">Optimización on-page automatizada</li><li data-es="Link building estratégico" data-en="Strategic link building">Link building estratégico</li><li data-es="SEO local para Google Maps" data-en="Local SEO for Google Maps">SEO local para Google Maps</li></ul></a>
+        <a href="/diseno-web.html" class="servicio-card reveal"><span class="servicio-number" aria-hidden="true">02</span><div class="servicio-icon">🎨</div><h3 data-es="Diseño Web Profesional" data-en="Professional Web Design">Diseño Web Profesional</h3><p data-es="Sitios web modernos que convierten visitantes en clientes." data-en="Modern websites that convert visitors into customers.">Sitios web modernos que convierten visitantes en clientes.</p><ul class="servicio-features"><li data-es="Diseño responsive premium" data-en="Premium responsive design">Diseño responsive premium</li><li data-es="Optimización de conversión" data-en="Conversion optimization">Optimización de conversión</li><li data-es="Velocidad ultra-rápida" data-en="Ultra-fast speed">Velocidad ultra-rápida</li><li data-es="Google Analytics integrado" data-en="Google Analytics integrated">Google Analytics integrado</li></ul></a>
+        <a href="/videos-drone.html" class="servicio-card reveal"><span class="servicio-number" aria-hidden="true">03</span><div class="servicio-icon">🚁</div><h3 data-es="Videos de Drone 4K" data-en="4K Drone Videos">Videos de Drone 4K</h3><p data-es="Video aéreo profesional con drones y edición con IA." data-en="Professional aerial video with drones and AI editing.">Video aéreo profesional con drones y edición con IA.</p><ul class="servicio-features"><li data-es="Video cinematográfico 4K" data-en="Cinematic 4K video">Video cinematográfico 4K</li><li data-es="Edición con IA" data-en="AI editing">Edición con IA</li><li data-es="Tours virtuales" data-en="Virtual tours">Tours virtuales</li><li data-es="Contenido para redes" data-en="Social media content">Contenido para redes</li></ul></a>
+        <a href="/consultoria-digital.html" class="servicio-card reveal"><span class="servicio-number" aria-hidden="true">04</span><div class="servicio-icon">💡</div><h3 data-es="Consultoría Digital" data-en="Digital Consulting">Consultoría Digital</h3><p data-es="Estrategia digital personalizada para tu negocio." data-en="Custom digital strategy for your business.">Estrategia digital personalizada para tu negocio.</p><ul class="servicio-features"><li data-es="Auditoría digital completa" data-en="Complete digital audit">Auditoría digital completa</li><li data-es="Estrategia de contenido" data-en="Content strategy">Estrategia de contenido</li><li data-es="Análisis de competencia" data-en="Competitor analysis">Análisis de competencia</li><li data-es="Plan de crecimiento 90 días" data-en="90-day growth plan">Plan de crecimiento 90 días</li></ul></a>
+      </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section class="proceso" id="proceso" aria-labelledby="proceso-title">
+      <div class="proceso-header">
+        <p class="section-eyebrow" data-es="Nuestro Proceso" data-en="Our Process">Nuestro Proceso</p>
+        <h2 class="section-title" id="proceso-title" data-es="Cómo Transformamos tu Negocio" data-en="How We Transform Your Business">Cómo Transformamos tu Negocio</h2>
+        <p class="section-subtitle" data-es="Un proceso probado que combina tecnología e inteligencia cultural para resultados reales." data-en="A proven process combining technology and cultural intelligence for real results.">Un proceso probado que combina tecnología e inteligencia cultural para resultados reales.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal"><div class="timeline-dot">1</div><div class="timeline-content"><h3 data-es="Análisis y Auditoría" data-en="Analysis & Audit">Análisis y Auditoría</h3><p data-es="Nuestra IA escanea tu presencia digital completa para identificar oportunidades de crecimiento." data-en="Our AI scans your entire digital presence to identify growth opportunities.">Nuestra IA escanea tu presencia digital completa para identificar oportunidades de crecimiento.</p></div></div>
+        <div class="timeline-item reveal"><div class="timeline-dot">2</div><div class="timeline-content"><h3 data-es="Estrategia Personalizada" data-en="Custom Strategy">Estrategia Personalizada</h3><p data-es="Creamos un plan hecho a la medida de tu negocio. Bilingüe, culturalmente relevante, basado en datos." data-en="We create a plan tailored to your business. Bilingual, culturally relevant, data-driven.">Creamos un plan hecho a la medida de tu negocio. Bilingüe, culturalmente relevante, basado en datos.</p></div></div>
+        <div class="timeline-item reveal"><div class="timeline-dot">3</div><div class="timeline-content"><h3 data-es="Ejecución con IA" data-en="AI Execution">Ejecución con IA</h3><p data-es="Implementamos con herramientas de IA que optimizan cada paso — desde contenido hasta campañas." data-en="We implement with AI tools that optimize every step — from content to campaigns.">Implementamos con herramientas de IA que optimizan cada paso — desde contenido hasta campañas.</p></div></div>
+        <div class="timeline-item reveal"><div class="timeline-dot">4</div><div class="timeline-content"><h3 data-es="Resultados y Crecimiento" data-en="Results & Growth">Resultados y Crecimiento</h3><p data-es="Monitoreo constante con reportes claros. Ajustamos en tiempo real para maximizar tu ROI." data-en="Constant monitoring with clear reports. We adjust in real time to maximize your ROI.">Monitoreo constante con reportes claros. Ajustamos en tiempo real para maximizar tu ROI.</p></div></div>
+      </div>
+    </section>
+
+    <!-- NUESTROS RESULTADOS -->
+    <section class="resultados" id="resultados" aria-labelledby="resultados-title">
+      <div class="resultados-header">
+        <p class="section-eyebrow" data-es="Nuestros Resultados" data-en="Our Results">Nuestros Resultados</p>
+        <h2 class="section-title" id="resultados-title" data-es="Proyectos Que Hablan Por Sí Solos" data-en="Projects That Speak for Themselves">Proyectos Que Hablan Por Sí Solos</h2>
+        <p class="section-subtitle" data-es="Negocios reales. Resultados reales. Sin retainers vacíos — solo trabajo que genera crecimiento." data-en="Real businesses. Real results. No empty retainers — just work that drives growth.">Negocios reales. Resultados reales. Sin retainers vacíos — solo trabajo que genera crecimiento.</p>
+      </div>
+
+      <!-- Project 1: Crown Decants -->
+      <div class="project-card reveal">
+        <div class="project-images">
+          <div class="project-before-after">
+            <div class="project-img-wrap">
+              <span class="project-img-label" data-es="Antes" data-en="Before">Antes</span>
+              <img src="/project-crown-before.png" alt="Tall Tine Scents - sitio anterior" loading="lazy" width="600" height="338">
+            </div>
+            <div class="project-img-wrap">
+              <span class="project-img-label after" data-es="Después" data-en="After">Después</span>
+              <img src="/project-crown-after.png" alt="Crown Decants - nuevo sitio" loading="lazy" width="600" height="338">
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags"><span class="project-tag" data-es="Rediseño Web" data-en="Web Redesign">Rediseño Web</span><span class="project-tag" data-es="SEO" data-en="SEO">SEO</span><span class="project-tag" data-es="Branding" data-en="Branding">Branding</span></div>
+          <h3>Crown Decants</h3>
+          <p class="project-url"><a href="https://crowndecants.com" target="_blank" rel="noopener">crowndecants.com</a></p>
+          <p class="project-desc" data-es="Este cliente llegó como Tall Tine Scents buscando optimización SEO, presencia en Google y un cambio total de imagen. Rediseñamos su sitio web por completo, creando una experiencia de compra premium que refleja la calidad de sus fragancias. El resultado: una nueva marca, un proceso de ventas más fluido, y un cliente tan motivado que ahora está creando sus propias fragancias. Google Listing en progreso — con ads, los leads están prácticamente garantizados." data-en="This client came to us as Tall Tine Scents looking for SEO optimization, Google presence, and a complete makeover. We redesigned their entire website, creating a premium shopping experience that reflects their fragrance quality. The result: a new brand, smoother sales process, and a client so motivated they're now creating their own scents. Google Listing in progress — with ads, leads are practically guaranteed.">Este cliente llegó como Tall Tine Scents buscando optimización SEO, presencia en Google y un cambio total de imagen. Rediseñamos su sitio web por completo, creando una experiencia de compra premium que refleja la calidad de sus fragancias. El resultado: una nueva marca, un proceso de ventas más fluido, y un cliente tan motivado que ahora está creando sus propias fragancias. Google Listing en progreso — con ads, los leads están prácticamente garantizados.</p>
+          <div class="project-metrics">
+            <div class="project-metric"><span class="project-metric-value" data-es="Nuevo Brand" data-en="New Brand">Nuevo Brand</span><span class="project-metric-label" data-es="Rebrand completo" data-en="Complete rebrand">Rebrand completo</span></div>
+            <div class="project-metric"><span class="project-metric-value" data-es="Ventas ↑" data-en="Sales ↑">Ventas ↑</span><span class="project-metric-label" data-es="Proceso optimizado" data-en="Optimized process">Proceso optimizado</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: Moane Landscaping -->
+      <div class="project-card reveal">
+        <div class="project-images">
+          <div class="project-before-after">
+            <div class="project-img-wrap">
+              <span class="project-img-label after" data-es="Sitio Web" data-en="Website">Sitio Web</span>
+              <img src="/project-moane.png" alt="Moane Landscaping - sitio web optimizado" loading="lazy" width="600" height="338">
+            </div>
+            <div class="project-img-wrap">
+              <span class="project-img-label after" data-es="Resultado" data-en="Result">Resultado</span>
+              <img src="/project-moane-proof.png" alt="Moane Landscaping - primer lead y trabajo cerrado" loading="lazy" width="600" height="338">
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags"><span class="project-tag">SEO</span><span class="project-tag" data-es="Leads Orgánicos" data-en="Organic Leads">Leads Orgánicos</span><span class="project-tag">Google Rankings</span></div>
+          <h3>Moane Landscaping</h3>
+          <p class="project-url"><a href="https://moanelandscaping.com" target="_blank" rel="noopener">moanelandscaping.com</a></p>
+          <p class="project-desc" data-es="Este contratista de hardscaping vino buscando leads orgánicos. Después de optimizar su sitio web para búsquedas locales, pasó de ser #8 a #3 en Google para 'landscapers in Mundelein' y es #1 para 'hardscapers in Mundelein'. Desde la optimización ha recibido llamadas de Google, submissions de formularios, y ya cerró su primer trabajo directamente desde el sitio. Victoria enorme para tráfico y leads." data-en="This hardscaping contractor came looking for organic leads. After optimizing his website for local search, he went from #8 to #3 on Google for 'landscapers in Mundelein' and is #1 for 'hardscapers in Mundelein'. Since the optimization he's gotten Google calls, form submissions, and already closed his first job directly from the site. Huge win for traffic and leads.">Este contratista de hardscaping vino buscando leads orgánicos. Después de optimizar su sitio web para búsquedas locales, pasó de ser #8 a #3 en Google para "landscapers in Mundelein" y es #1 para "hardscapers in Mundelein". Desde la optimización ha recibido llamadas de Google, submissions de formularios, y ya cerró su primer trabajo directamente desde el sitio. Victoria enorme para tráfico y leads.</p>
+          <div class="project-metrics">
+            <div class="project-metric"><span class="project-metric-value">#1</span><span class="project-metric-label">Hardscapers Mundelein</span></div>
+            <div class="project-metric"><span class="project-metric-value">#8 → #3</span><span class="project-metric-label">Landscapers Mundelein</span></div>
+            <div class="project-metric"><span class="project-metric-value" data-es="Trabajo Cerrado" data-en="Job Closed">Trabajo Cerrado</span><span class="project-metric-label" data-es="Desde el sitio web" data-en="From the website">Desde el sitio web</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: Better Climate Zone -->
+      <div class="project-card reveal">
+        <div class="project-images">
+          <div class="project-single-img">
+            <img src="/blog-thumb.png" alt="Better Climate Zone - sitio web" loading="lazy" width="600" height="338">
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags"><span class="project-tag" data-es="Diseño Web" data-en="Web Design">Diseño Web</span><span class="project-tag">SEO</span><span class="project-tag" data-es="Estrategia de Ads" data-en="Ads Strategy">Estrategia de Ads</span></div>
+          <h3>Better Climate Zone</h3>
+          <p class="project-url"><a href="https://betterclimatezone.com" target="_blank" rel="noopener">betterclimatezone.com</a></p>
+          <p class="project-desc" data-es="Este negocio de HVAC estaba atrapado con una agencia anterior que cobraba retainers mensuales sin generar leads ni optimización — solo construyeron un sitio web. Peor aún, su dominio anterior estaba secuestrado por esa agencia. En ElSEOLatino solo cobramos por proyecto, porque como dueños de negocio nosotros mismos, preferimos que ese dinero beneficie al cliente a través de ad spend. Ahora el dueño tiene control total de su nuevo sitio web optimizado para generación orgánica de leads, con una estrategia de keywords para Google Ads que ya está generando trabajo." data-en="This HVAC business was stuck with a previous agency charging monthly retainers with no leads or optimization — just a website build. Worse, their old domain was held hostage. At ElSEOLatino we only charge per project, because as business owners ourselves, we'd rather that money benefit the client through ad spend. Now the owner has full control of a new SEO-optimized website, with a keyword strategy for Google Ads that's already generating work.">Este negocio de HVAC estaba atrapado con una agencia anterior que cobraba retainers mensuales sin generar leads ni optimización — solo construyeron un sitio web. Peor aún, su dominio anterior estaba secuestrado por esa agencia. En ElSEOLatino solo cobramos por proyecto, porque como dueños de negocio nosotros mismos, preferimos que ese dinero beneficie al cliente a través de ad spend. Ahora el dueño tiene control total de su nuevo sitio web optimizado para generación orgánica de leads, con una estrategia de keywords para Google Ads que ya está generando trabajo.</p>
+          <div class="project-metrics">
+            <div class="project-metric"><span class="project-metric-value" data-es="Libertad" data-en="Freedom">Libertad</span><span class="project-metric-label" data-es="Control total del sitio" data-en="Full site control">Control total del sitio</span></div>
+            <div class="project-metric"><span class="project-metric-value" data-es="Leads ↑" data-en="Leads ↑">Leads ↑</span><span class="project-metric-label" data-es="Generación orgánica" data-en="Organic generation">Generación orgánica</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: EJE Cards -->
+      <div class="project-card reveal">
+        <div class="project-images">
+          <div class="project-single-img">
+            <img src="/blog-thumb.png" alt="EJE Cards - sitio web" loading="lazy" width="600" height="338">
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags"><span class="project-tag" data-es="Diseño Web" data-en="Web Design">Diseño Web</span><span class="project-tag">Branding</span><span class="project-tag" data-es="Credibilidad" data-en="Credibility">Credibilidad</span></div>
+          <h3>EJE Cards — Emerald Jade Evaluations</h3>
+          <p class="project-url"><a href="https://ejecards.com" target="_blank" rel="noopener">ejecards.com</a></p>
+          <p class="project-desc" data-es="Esta empresa de grading de tarjetas coleccionables tenía problemas para tener un sitio web profesional. Creamos ejecards.com — un sitio impresionante que construye credibilidad instantánea con los clientes. Todo está integrado con su negocio y pronto exhibirá las tarjetas que han calificado. Esta empresa está creciendo tan rápido que aún no hemos implementado la estrategia de Google Ads. Ya fueron reseñados por HotPullz. Estén atentos a la empresa de grading más candente que está entrando a competir en la industria." data-en="This trading card grading company struggled to get a professional website up and running. We created ejecards.com — a stunning site that builds instant credibility with customers. Everything is tied into their business and will soon showcase graded cards. This company is growing so fast we haven't even implemented Google Ads yet. Already featured on HotPullz. Watch out for the hottest card grading company entering the game.">Esta empresa de grading de tarjetas coleccionables tenía problemas para tener un sitio web profesional. Creamos ejecards.com — un sitio impresionante que construye credibilidad instantánea con los clientes. Todo está integrado con su negocio y pronto exhibirá las tarjetas que han calificado. Esta empresa está creciendo tan rápido que aún no hemos implementado la estrategia de Google Ads. Ya fueron reseñados por HotPullz. Estén atentos a la empresa de grading más candente que está entrando a competir en la industria.</p>
+          <div class="project-metrics">
+            <div class="project-metric"><span class="project-metric-value" data-es="Reseñados" data-en="Featured">Reseñados</span><span class="project-metric-label"><a href="https://hotpullz.com/eje-cards-review" target="_blank" rel="noopener" style="color:var(--electric);text-decoration:none;">HotPullz.com</a></span></div>
+            <div class="project-metric"><span class="project-metric-value" data-es="Creciendo" data-en="Growing">Creciendo</span><span class="project-metric-label" data-es="Sin ads todavía" data-en="No ads yet">Sin ads todavía</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5: Abvolt Automation -->
+      <div class="project-card reveal">
+        <div class="project-images">
+          <div class="project-single-img">
+            <img src="/blog-thumb.png" alt="Abvolt Automation - sitio web" loading="lazy" width="600" height="338">
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-tags"><span class="project-tag" data-es="Diseño Web" data-en="Web Design">Diseño Web</span><span class="project-tag">SEO</span><span class="project-tag" data-es="Leads Orgánicos" data-en="Organic Leads">Leads Orgánicos</span></div>
+          <h3>Abvolt Automation</h3>
+          <p class="project-url"><a href="https://abvoltautomation.com" target="_blank" rel="noopener">abvoltautomation.com</a></p>
+          <p class="project-desc" data-es="Estos profesionales de electricidad y bajo voltaje querían empezar a lo grande — los mejores en su industria buscaron a los mejores en diseño web y generación de leads. Estos 2 dueños son literalmente eléctricos: su empresa puede instalar cualquier necesidad eléctrica y de bajo voltaje. Están ganando reconocimiento rápidamente en el North Shore y a través de nuestro enfoque de SEO orgánico consiguieron su primer trabajo comercial: instalación de outlets eléctricos, cámaras de seguridad, control de acceso, sistema de audio, ¡y hasta un jumbotron! Ya están ocupados con trabajo pero pronto implementaremos Google Ads para generar aún más." data-en="These electrical and low-voltage professionals wanted to hit the ground running — the best in their industry partnered with the best in web design and lead generation. These 2 owners are literally electric: their company can power and install any electrical and low-voltage need. They're quickly gaining recognition on the North Shore, and through our organic SEO approach they broke through with their first commercial gig: electrical outlets, camera systems, access control, audio system, and even a jumbotron! Already busy with work — Google Ads strategy coming soon.">Estos profesionales de electricidad y bajo voltaje querían empezar a lo grande — los mejores en su industria buscaron a los mejores en diseño web y generación de leads. Estos 2 dueños son literalmente eléctricos: su empresa puede instalar cualquier necesidad eléctrica y de bajo voltaje. Están ganando reconocimiento rápidamente en el North Shore y a través de nuestro enfoque de SEO orgánico consiguieron su primer trabajo comercial: instalación de outlets eléctricos, cámaras de seguridad, control de acceso, sistema de audio, ¡y hasta un jumbotron! Ya están ocupados con trabajo pero pronto implementaremos Google Ads para generar aún más.</p>
+          <div class="project-metrics">
+            <div class="project-metric"><span class="project-metric-value" data-es="Comercial" data-en="Commercial">Comercial</span><span class="project-metric-label" data-es="Primer gran proyecto" data-en="First big project">Primer gran proyecto</span></div>
+            <div class="project-metric"><span class="project-metric-value">North Shore</span><span class="project-metric-label" data-es="Reconocimiento creciente" data-en="Growing recognition">Reconocimiento creciente</span></div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="testimonios" aria-labelledby="testimonios-title">
+      <div class="testimonials-header">
+        <p class="section-eyebrow" data-es="Testimonios" data-en="Testimonials">Testimonios</p>
+        <h2 class="section-title" id="testimonios-title" data-es="Lo Que Dicen Nuestros Clientes" data-en="What Our Clients Say">Lo Que Dicen Nuestros Clientes</h2>
+        <p class="section-subtitle" data-es="Resultados reales de negocios latinos que confiaron en nosotros." data-en="Real results from Latino businesses that trusted us.">Resultados reales de negocios latinos que confiaron en nosotros.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal"><div class="testimonial-stars" aria-label="5 estrellas">★★★★★</div><p class="testimonial-text" data-es='"En 3 meses triplicamos las llamadas de clientes nuevos. La estrategia de SEO local fue increíble."' data-en='"In 3 months we tripled new client calls. The local SEO strategy was incredible."'>"En 3 meses triplicamos las llamadas de clientes nuevos. La estrategia de SEO local fue increíble."</p><div class="testimonial-author">María González</div><div class="testimonial-role">Restaurante La Casita, Chicago</div></div>
+        <div class="testimonial-card reveal"><div class="testimonial-stars" aria-label="5 estrellas">★★★★★</div><p class="testimonial-text" data-es='"El video de drone de nuestra propiedad se hizo viral. Vendimos la casa en una semana."' data-en='"The drone video of our property went viral. We sold the house in one week."'>"El video de drone de nuestra propiedad se hizo viral. Vendimos la casa en una semana."</p><div class="testimonial-author">Carlos Rodríguez</div><div class="testimonial-role" data-es="Bienes Raíces CR, Illinois" data-en="CR Real Estate, Illinois">Bienes Raíces CR, Illinois</div></div>
+        <div class="testimonial-card reveal"><div class="testimonial-stars" aria-label="5 estrellas">★★★★★</div><p class="testimonial-text" data-es='"Por fin una agencia que entiende nuestra cultura y nuestro mercado. Los resultados hablan solos."' data-en='"Finally an agency that understands our culture and our market. The results speak for themselves."'>"Por fin una agencia que entiende nuestra cultura y nuestro mercado. Los resultados hablan solos."</p><div class="testimonial-author">Ana Martínez</div><div class="testimonial-role" data-es="Clínica Dental Sonrisa, Elgin" data-en="Sonrisa Dental Clinic, Elgin">Clínica Dental Sonrisa, Elgin</div></div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" id="contacto" aria-labelledby="cta-title">
+      <p class="section-eyebrow" data-es="¿Listo Para Crecer?" data-en="Ready to Grow?">¿Listo Para Crecer?</p>
+      <h2 class="section-title" id="cta-title" data-es="Tu Consulta Gratuita Te Espera" data-en="Your Free Consultation Awaits">Tu Consulta Gratuita Te Espera</h2>
+      <p class="section-subtitle" data-es="Agenda una llamada de 15 minutos sin compromiso. Analizamos tu negocio y te mostramos exactamente cómo podemos ayudarte." data-en="Schedule a free 15-minute call. We'll analyze your business and show you exactly how we can help.">Agenda una llamada de 15 minutos sin compromiso. Analizamos tu negocio y te mostramos exactamente cómo podemos ayudarte.</p>
+      <div class="cta-actions">
+        <a href="tel:+12243054785" class="btn-primary">📞 <span data-es="Llama Ahora" data-en="Call Now">Llama Ahora</span></a>
+        <a href="mailto:marcoaguilarseo@gmail.com" class="btn-secondary">✉️ <span data-es="Enviar Email" data-en="Send Email">Enviar Email</span></a>
+      </div>
+      <div class="cta-phone"><a href="tel:+12243054785">(224) 305-4785</a></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand"><span class="nav-logo-text"><span class="gold">El</span>SEO<span class="gold">Latino</span></span><p data-es="Marketing digital con inteligencia artificial para negocios latinos en Estados Unidos. Chicago, IL." data-en="AI-powered digital marketing for Latino businesses in the United States. Chicago, IL.">Marketing digital con inteligencia artificial para negocios latinos en Estados Unidos. Chicago, IL.</p></div>
+      <div><h4 data-es="Servicios" data-en="Services">Servicios</h4><ul class="footer-links"><li><a href="/seo-con-ia.html">SEO con IA</a></li><li><a href="/diseno-web.html" data-es="Diseño Web" data-en="Web Design">Diseño Web</a></li><li><a href="/videos-drone.html">Videos Drone</a></li><li><a href="/consultoria-digital.html" data-es="Consultoría" data-en="Consulting">Consultoría</a></li></ul></div>
+      <div><h4 data-es="Empresa" data-en="Company">Empresa</h4><ul class="footer-links"><li><a href="/blog.html">Blog</a></li><li><a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a></li></ul></div>
+      <div><h4 data-es="Contacto" data-en="Contact">Contacto</h4><ul class="footer-links"><li><a href="tel:+12243054785">(224) 305-4785</a></li><li><a href="mailto:marcoaguilarseo@gmail.com">marcoaguilarseo@gmail.com</a></li><li>Chicago, IL</li></ul></div>
+    </div>
+    <div class="footer-bottom"><p data-es="© 2026 ElSEOLatino. Todos los derechos reservados." data-en="© 2026 ElSEOLatino. All rights reserved.">© 2026 ElSEOLatino. Todos los derechos reservados.</p></div>
+  </footer>
+  <script src="/main.js" defer></script>
+</body>
+</html>
